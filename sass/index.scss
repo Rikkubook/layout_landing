@@ -1,0 +1,220 @@
+@import "reset";
+
+/* 變數 */
+
+$dark-blue: #415165;
+$light-blue: #96A9C4;
+$red: #A00404;
+
+//---
+$main-color: $dark-blue;
+$sec-color: $light-blue;
+$import-color: $red;
+
+
+
+/* 共用設定 */
+*{
+    // font-family: 'Open Sans', sans-serif;
+    // outline: 1px solid red;
+    font-weight: 300;
+}
+
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.line-bold{
+    border-bottom: 2px solid #000;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+@mixin _textP{
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+}
+
+// 圓點
+@mixin _point{
+    content:'';
+    display:inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $sec-color;
+    margin-right: 16px;
+}
+
+
+/* 原子 */
+@mixin _title{
+    padding-bottom: 8px;
+    font-size: 32px;
+    line-height: 45px;
+    font-weight: 500;
+    span{
+        font-size: 24px;
+        line-height: 32px;
+        margin-left: 16px;
+    }
+}
+
+
+.title{
+    @include _title;
+    border-bottom: 1px solid #000;
+    margin-bottom: 16px;
+    span{
+        color: $import-color;
+    }
+}
+.titleWhite{
+    @include _title;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 40px;
+}
+
+
+/* 分子 */
+.course{
+    padding-left: 16px;
+    @include _textP;
+    li{
+        margin-bottom: 32px;
+    }
+    .course__point{
+        @include _point;
+        position: relative;
+        &::before{
+            content:'';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            display: inline-block;
+            height: 68px;
+            border-left: 1px solid $sec-color;
+        }
+    }
+    li:last-child{
+        .course__point{
+            &::before{
+                display:none;
+            }
+        }
+    }
+    
+}
+
+/* 組織 */
+header{
+    h1{
+        width: 288px;
+        margin-bottom: 24px;
+        font-size: 80px;
+        line-height: 90px;
+    }
+    img{
+        margin-bottom: 48px;
+    }
+}
+.profile{
+    div{
+        padding-left: 48px;
+        margin-bottom: 80px;
+    }
+    p{
+        @include _textP;
+        &:first-child{
+            margin-bottom: 20px;
+            text-indent: -32px;
+            &::before{
+                @include _point;
+            }
+        }
+    }
+}
+.education{
+    margin-bottom: 142px;
+}
+.skill{
+    background-color: $sec-color;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 136px;
+    .skill__layout{
+        background-color: $main-color;
+        padding: 24px 102px 56px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        h2{
+            width: 100%;
+        }
+        div{
+            margin: 0px auto ;
+            padding-left: 24px;
+            border-left: 1px solid #fff;
+            color: #fff;
+            p{
+                @include _textP;
+                line-height: 32px;
+                margin-bottom: 16px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+}
+.work{
+    margin-bottom: 72px;
+    .work__content{
+        margin-left: 24px;
+        padding-left: 24px;
+        border-left: 1px solid $sec-color;
+        .work__content__group{
+            margin-bottom: 32px;
+            h3{
+                @include _textP;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+            img{
+                margin-bottom: 8px;
+            }
+            p{
+                max-width: 642px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+footer{
+    padding-top: 30px;
+    padding-bottom: 48px;
+    background-color: $main-color;
+    text-align: center;
+    p{
+        @include _textP;
+        margin-bottom: 16px;
+        color: #fff;
+    }
+    .footer__imgs{
+        font-size: 0;
+        img{
+            margin-right: 24px;
+        }
+        img:last-child{
+            margin-right: 0;
+        }
+    }
+}
