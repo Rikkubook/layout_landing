@@ -82,18 +82,13 @@ button:focus, button:active, a:focus, a:active {
 /* 變數 */
 /* 共用設定 */
 * {
+  font-family: 'Roboto', Microsoft JhengHei, sans-serif;
   font-weight: 300;
 }
 
 .wrap {
   width: 1200px;
   margin: 0 auto;
-}
-
-.line-bold {
-  border-bottom: 2px solid #000;
-  margin-top: 0;
-  margin-bottom: 48px;
 }
 
 /* 原子 */
@@ -173,19 +168,23 @@ button:focus, button:active, a:focus, a:active {
 
 /* 組織 */
 header h1 {
-  width: 288px;
-  margin-bottom: 24px;
   font-size: 80px;
   line-height: 90px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 header img {
   margin-bottom: 48px;
 }
 
+.profile {
+  margin-bottom: 72px;
+}
+
 .profile div {
   padding-left: 48px;
-  margin-bottom: 80px;
 }
 
 .profile p {
@@ -211,35 +210,30 @@ header img {
 }
 
 .education {
-  margin-bottom: 142px;
+  margin-bottom: 72px;
 }
 
 .skill {
+  position: relative;
+}
+
+.skill .skill__bg {
   background-color: #96A9C4;
   height: 360px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 136px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .skill .skill__layout {
   background-color: #415165;
   padding: 24px 102px 56px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 72px;
 }
 
 .skill .skill__layout h2 {
@@ -247,10 +241,11 @@ header img {
 }
 
 .skill .skill__layout div {
-  margin: 0px auto;
+  display: inline-block;
   padding-left: 24px;
   border-left: 1px solid #fff;
   color: #fff;
+  text-align: left;
 }
 
 .skill .skill__layout div p {
@@ -302,6 +297,7 @@ footer {
   padding-bottom: 48px;
   background-color: #415165;
   text-align: center;
+  color: #fff;
 }
 
 footer p {
@@ -309,6 +305,10 @@ footer p {
   line-height: 36px;
   font-weight: 300;
   margin-bottom: 16px;
+}
+
+footer p a {
+  text-decoration: none;
   color: #fff;
 }
 
@@ -316,11 +316,11 @@ footer .footer__imgs {
   font-size: 0;
 }
 
-footer .footer__imgs img {
+footer .footer__imgs a {
   margin-right: 24px;
 }
 
-footer .footer__imgs img:last-child {
+footer .footer__imgs a:last-child {
   margin-right: 0;
 }
 /*# sourceMappingURL=index.css.map */

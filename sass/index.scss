@@ -15,19 +15,14 @@ $import-color: $red;
 
 /* 共用設定 */
 *{
-    // font-family: 'Open Sans', sans-serif;
     // outline: 1px solid red;
+    font-family: 'Roboto', Microsoft JhengHei, sans-serif;
     font-weight: 300;
 }
 
 .wrap{
     width: 1200px;
     margin: 0 auto;
-}
-.line-bold{
-    border-bottom: 2px solid #000;
-    margin-top: 0;
-    margin-bottom: 48px;
 }
 
 @mixin _textP{
@@ -113,19 +108,20 @@ $import-color: $red;
 /* 組織 */
 header{
     h1{
-        width: 288px;
-        margin-bottom: 24px;
         font-size: 80px;
         line-height: 90px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 24px;
+        margin-bottom: 48px;
     }
     img{
         margin-bottom: 48px;
     }
 }
 .profile{
+    margin-bottom: 72px;
     div{
         padding-left: 48px;
-        margin-bottom: 80px;
     }
     p{
         @include _textP;
@@ -139,29 +135,34 @@ header{
     }
 }
 .education{
-    margin-bottom: 142px;
+    margin-bottom: 72px;
 }
 .skill{
-    background-color: $sec-color;
-    height: 360px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 136px;
+    position: relative;
+    .skill__bg{
+        background-color: $sec-color;
+        height: 360px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
     .skill__layout{
         background-color: $main-color;
         padding: 24px 102px 56px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        text-align: center;
+        margin-bottom: 72px;
         h2{
             width: 100%;
         }
         div{
-            margin: 0px auto ;
+            display:inline-block;
             padding-left: 24px;
             border-left: 1px solid #fff;
             color: #fff;
+            text-align: left;
             p{
                 @include _textP;
                 line-height: 32px;
@@ -203,17 +204,21 @@ footer{
     padding-bottom: 48px;
     background-color: $main-color;
     text-align: center;
+    color: #fff;
     p{
         @include _textP;
         margin-bottom: 16px;
-        color: #fff;
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
     }
     .footer__imgs{
         font-size: 0;
-        img{
+        a{
             margin-right: 24px;
         }
-        img:last-child{
+        a:last-child{
             margin-right: 0;
         }
     }
