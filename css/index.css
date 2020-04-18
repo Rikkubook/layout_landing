@@ -82,6 +82,7 @@ button:focus, button:active, a:focus, a:active {
 /* 變數 */
 /* 共用設定 */
 * {
+  outline: 1px solid red;
   font-family: 'Roboto', Microsoft JhengHei, sans-serif;
   font-weight: 300;
 }
