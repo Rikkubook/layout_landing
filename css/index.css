@@ -82,246 +82,278 @@ button:focus, button:active, a:focus, a:active {
 /* 變數 */
 /* 共用設定 */
 * {
-  outline: 1px solid red;
   font-family: 'Roboto', Microsoft JhengHei, sans-serif;
   font-weight: 300;
 }
 
 .wrap {
-  width: 1200px;
+  max-width: 1920px;
   margin: 0 auto;
+}
+
+.mb-1em {
+  margin-bottom: 16px;
+}
+
+.mb-2em {
+  margin-bottom: 32px;
+}
+
+.mb-3em {
+  margin-bottom: 48px;
 }
 
 /* 原子 */
 .title {
-  padding-bottom: 8px;
-  font-size: 32px;
-  line-height: 45px;
-  font-weight: 500;
-  border-bottom: 1px solid #000;
-  margin-bottom: 16px;
-}
-
-.title span {
-  font-size: 24px;
-  line-height: 32px;
-  margin-left: 16px;
-}
-
-.title span {
-  color: #A00404;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
 }
 
 .titleWhite {
-  padding-bottom: 8px;
-  font-size: 32px;
-  line-height: 45px;
-  font-weight: 500;
-  color: #fff;
+  font-size: 64px;
+  line-height: 75px;
   text-align: center;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 40px;
+  font-style: italic;
+  font-weight: normal;
+  color: #fff;
 }
 
-.titleWhite span {
+.describe {
   font-size: 24px;
-  line-height: 32px;
-  margin-left: 16px;
+  line-height: 42px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
 }
 
-/* 分子 */
-.course {
-  padding-left: 16px;
+.describeWhite {
   font-size: 24px;
-  line-height: 36px;
-  font-weight: 300;
-}
-
-.course li {
-  margin-bottom: 32px;
-}
-
-.course .course__point {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #96A9C4;
-  margin-right: 16px;
-  position: relative;
-}
-
-.course .course__point::before {
-  content: '';
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  display: inline-block;
-  height: 68px;
-  border-left: 1px solid #96A9C4;
-}
-
-.course li:last-child .course__point::before {
-  display: none;
+  line-height: 42px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  color: #FFF;
 }
 
 /* 組織 */
-header h1 {
+header {
+  position: relative;
+  height: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+header .header__bg {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: -1;
+  max-width: 1920px;
+}
+
+header .header__container h1 {
+  margin-bottom: 32px;
   font-size: 80px;
-  line-height: 90px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 24px;
-  margin-bottom: 48px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 94px;
+  color: #fff;
 }
 
-header img {
-  margin-bottom: 48px;
-}
-
-.profile {
-  margin-bottom: 72px;
-}
-
-.profile div {
-  padding-left: 48px;
-}
-
-.profile p {
+header .header__container h1 span {
+  display: block;
   font-size: 24px;
-  line-height: 36px;
-  font-weight: 300;
+  height: 28px;
+  line-height: 48px;
 }
 
-.profile p:first-child {
-  margin-bottom: 20px;
-  text-indent: -32px;
+header .header__container .describeWhite {
+  margin-bottom: 64px;
 }
 
-.profile p:first-child::before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #96A9C4;
+header .header__container .mediaList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .header__container .mediaList li {
+  width: 60px;
+  height: 60px;
   margin-right: 16px;
 }
 
-.education {
-  margin-bottom: 72px;
+header .header__container .mediaList li a {
+  display: block;
 }
 
-.skill {
-  position: relative;
+header .header__container .mediaList li:last-child {
+  margin-right: 0;
 }
 
-.skill .skill__bg {
-  background-color: #96A9C4;
-  height: 360px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-.skill .skill__layout {
-  background-color: #415165;
-  padding: 24px 102px 56px;
+.about {
+  margin-bottom: 56px;
   text-align: center;
-  margin-bottom: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.skill .skill__layout h2 {
-  width: 100%;
+.about .title {
+  margin-bottom: 40px;
 }
 
-.skill .skill__layout div {
-  display: inline-block;
-  padding-left: 24px;
-  border-left: 1px solid #fff;
-  color: #fff;
-  text-align: left;
+.about img {
+  margin-bottom: 24px;
 }
 
-.skill .skill__layout div p {
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: 300;
-  line-height: 32px;
-  margin-bottom: 16px;
+.about .about__human {
+  padding-bottom: 32px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid #000000;
 }
 
-.skill .skill__layout div p:last-child {
+.about .about__human .describe {
+  margin-bottom: 8px;
+}
+
+.about .about__human .describe:last-child {
   margin-bottom: 0;
 }
 
-.work {
-  margin-bottom: 72px;
-}
-
-.work .work__content {
-  margin-left: 24px;
-  padding-left: 24px;
-  border-left: 1px solid #96A9C4;
-}
-
-.work .work__content .work__content__group {
+.about .about__list li {
+  font-size: 24px;
+  line-height: 42px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
   margin-bottom: 32px;
 }
 
-.work .work__content .work__content__group h3 {
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: 300;
-  font-weight: 500;
-  margin-bottom: 8px;
+.about .about__list li::before {
+  content: '';
+  display: inline-block;
+  vertical-align: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: #891818;
 }
 
-.work .work__content .work__content__group img {
-  margin-bottom: 8px;
+.brand {
+  background-color: #000;
+  margin-bottom: 72px;
+  padding-top: 64px;
+  padding-bottom: 160px;
 }
 
-.work .work__content .work__content__group p {
-  max-width: 642px;
+.brand .describeWhite {
+  font-weight: normal;
+}
+
+.brand .describeWhite:nth-child(3) {
   font-size: 20px;
-  line-height: 30px;
 }
 
-footer {
-  padding-top: 30px;
-  padding-bottom: 48px;
-  background-color: #415165;
+.brand .brand__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.brand .brand__list li:first-child {
+  width: 100%;
   text-align: center;
-  color: #fff;
+  margin-bottom: 40px;
 }
 
-footer p {
-  font-size: 24px;
-  line-height: 36px;
-  font-weight: 300;
-  margin-bottom: 16px;
-}
-
-footer p a {
-  text-decoration: none;
-  color: #fff;
-}
-
-footer .footer__imgs {
-  font-size: 0;
-}
-
-footer .footer__imgs a {
+.brand .brand__list li:nth-child(2) {
   margin-right: 24px;
 }
 
-footer .footer__imgs a:last-child {
-  margin-right: 0;
+.work {
+  position: relative;
+  padding-bottom: 160px;
+}
+
+.work .work__bg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.work .title {
+  margin-bottom: 24px;
+}
+
+.work .describe {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.work .work__list {
+  width: 1200px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.work .work__list li {
+  margin-bottom: 58px;
+}
+
+.work .work__list li:nth-child(6), .work .work__list li:nth-child(7), .work .work__list li:nth-child(8) {
+  margin-bottom: 0;
+}
+
+.work .work__list .describeWhite {
+  height: 28px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+footer {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  background-color: #000;
+}
+
+footer .describeWhite {
+  font-weight: normal;
+  line-height: 36px;
 }
 /*# sourceMappingURL=index.css.map */

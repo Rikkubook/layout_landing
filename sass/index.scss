@@ -4,222 +4,241 @@
 
 $dark-blue: #415165;
 $light-blue: #96A9C4;
-$red: #A00404;
+$red: #891818;
 
 //---
 $main-color: $dark-blue;
-$sec-color: $light-blue;
+$sec-color: $red;
 $import-color: $red;
 
-
+body{
+    // overflow: hidden;
+}
 
 /* 共用設定 */
 *{
-    outline: 1px solid red;
+    // outline: 1px solid red;
     font-family: 'Roboto', Microsoft JhengHei, sans-serif;
     font-weight: 300;
 }
 
 .wrap{
-    width: 1200px;
+    max-width: 1920px;
     margin: 0 auto;
 }
 
-@mixin _textP{
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 300;
+.mb-1em{
+    margin-bottom: 16px;
 }
 
-// 圓點
-@mixin _point{
-    content:'';
-    display:inline-block;
-    vertical-align: middle;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: $sec-color;
-    margin-right: 16px;
+.mb-2em{
+    margin-bottom: 32px;
 }
+
+.mb-3em{
+    margin-bottom: 48px;
+}
+
 
 
 /* 原子 */
+//標題
 @mixin _title{
-    padding-bottom: 8px;
-    font-size: 32px;
-    line-height: 45px;
-    font-weight: 500;
-    span{
-        font-size: 24px;
-        line-height: 32px;
-        margin-left: 16px;
-    }
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
 }
-
 
 .title{
     @include _title;
-    border-bottom: 1px solid #000;
-    margin-bottom: 16px;
-    span{
-        color: $import-color;
-    }
 }
+
 .titleWhite{
     @include _title;
     color: #fff;
-    text-align: center;
-    border-bottom: 1px solid #fff;
-    margin-bottom: 40px;
 }
 
+// 描述
+@mixin _describe{
+    font-size: 24px;
+    line-height: 42px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
 
-/* 分子 */
-.course{
-    padding-left: 16px;
-    @include _textP;
-    li{
-        margin-bottom: 32px;
-    }
-    .course__point{
-        @include _point;
-        position: relative;
-        &::before{
-            content:'';
-            position: absolute;
-            left: 8px;
-            top: 8px;
-            display: inline-block;
-            height: 68px;
-            border-left: 1px solid $sec-color;
-        }
-    }
-    li:last-child{
-        .course__point{
-            &::before{
-                display:none;
-            }
-        }
-    }
-    
+.describe{
+    @include _describe;
+}
+
+.describeWhite{
+    @include _describe;
+    color: #FFF;
 }
 
 /* 組織 */
 header{
-    h1{
-        font-size: 80px;
-        line-height: 90px;
-        border-bottom: 2px solid #000;
-        padding-bottom: 24px;
-        margin-bottom: 48px;
+    position: relative;
+    height: 960px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .header__bg{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        max-width: 1920px;
     }
-    img{
-        margin-bottom: 48px;
-    }
-}
-.profile{
-    margin-bottom: 72px;
-    div{
-        padding-left: 48px;
-    }
-    p{
-        @include _textP;
-        &:first-child{
-            margin-bottom: 20px;
-            text-indent: -32px;
-            &::before{
-                @include _point;
+    .header__container{
+        h1{
+            margin-bottom: 32px;
+            font-size: 80px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 94px;
+            color: #fff;
+            span{
+                display: block;
+                font-size: 24px;
+                height: 28px;
+                line-height: 48px;
             }
         }
-    }
-}
-.education{
-    margin-bottom: 72px;
-}
-.skill{
-    position: relative;
-    .skill__bg{
-        background-color: $sec-color;
-        height: 360px;
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-    }
-    .skill__layout{
-        background-color: $main-color;
-        padding: 24px 102px 56px;
-        text-align: center;
-        margin-bottom: 72px;
-        h2{
-            width: 100%;
+        .describeWhite{
+            margin-bottom: 64px;
         }
-        div{
-            display:inline-block;
-            padding-left: 24px;
-            border-left: 1px solid #fff;
-            color: #fff;
-            text-align: left;
-            p{
-                @include _textP;
-                line-height: 32px;
-                margin-bottom: 16px;
+        .mediaList{
+            display: flex;
+            justify-content: center;
+            li{
+                width: 60px;
+                height: 60px;
+                margin-right: 16px;
+                a{
+                    display: block;
+                }
                 &:last-child{
-                    margin-bottom: 0;
+                    margin-right: 0;
                 }
             }
         }
+    }
+}
 
-    }
-}
-.work{
-    margin-bottom: 72px;
-    .work__content{
-        margin-left: 24px;
-        padding-left: 24px;
-        border-left: 1px solid $sec-color;
-        .work__content__group{
-            margin-bottom: 32px;
-            h3{
-                @include _textP;
-                font-weight: 500;
-                margin-bottom: 8px;
-            }
-            img{
-                margin-bottom: 8px;
-            }
-            p{
-                max-width: 642px;
-                font-size: 20px;
-                line-height: 30px;
-            }
-        }
-    }
-}
-footer{
-    padding-top: 30px;
-    padding-bottom: 48px;
-    background-color: $main-color;
+.about{
+    margin-bottom: 56px;
     text-align: center;
-    color: #fff;
-    p{
-        @include _textP;
-        margin-bottom: 16px;
-        a{
-            text-decoration: none;
-            color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title{
+        margin-bottom: 40px;
+    }
+    img{
+        margin-bottom: 24px;
+    }
+    .about__human{
+        padding-bottom: 32px;
+        margin-bottom: 34px;
+        border-bottom: 1px solid #000000;
+        .describe{
+            margin-bottom: 8px;
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
     }
-    .footer__imgs{
-        font-size: 0;
-        a{
+    .about__list{
+        li{
+            @include _describe;
+            margin-bottom: 32px;
+            &::before{
+                content: '';
+                display: inline-block;
+                vertical-align: center;
+                width: 22px;
+                height: 22px;
+                margin-right: 16px;
+                border-radius: 50%;
+                background-color: $sec-color;
+
+            }
+        }
+    }
+}
+
+.brand{
+    background-color: #000;
+    margin-bottom: 72px;
+    padding-top: 64px;
+    padding-bottom: 160px;
+
+    .describeWhite{
+        font-weight: normal;
+        &:nth-child(3){
+            font-size: 20px;
+        }
+    }
+    .brand__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li:first-child{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        li:nth-child(2){
             margin-right: 24px;
         }
-        a:last-child{
-            margin-right: 0;
+    }
+}
+
+.work{
+    position: relative;
+    padding-bottom: 160px;
+    .work__bg{
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+    .title{
+        margin-bottom: 24px;
+    }
+    .describe{
+        font-weight: normal;
+        font-size: 20px;
+    }
+    .work__list{
+        width: 1200px;
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            margin-bottom: 58px;
+            &:nth-child(6), &:nth-child(7), &:nth-child(8){
+                margin-bottom: 0;
+            }
         }
+        .describeWhite{
+            height: 28px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+    }
+}
+
+footer{
+    padding-top: 64px;
+    padding-bottom: 80px;
+    background-color: #000;
+    .describeWhite{
+        font-weight: normal;
+        line-height: 36px;
     }
 }
