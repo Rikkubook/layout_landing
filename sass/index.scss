@@ -1,5 +1,5 @@
 @import "reset";
-
+@import "for";
 /* 變數 */
 
 $dark-blue: #415165;
@@ -11,9 +11,7 @@ $main-color: $dark-blue;
 $sec-color: $red;
 $import-color: $red;
 
-body{
-    // overflow: hidden;
-}
+
 
 /* 共用設定 */
 *{
@@ -22,24 +20,33 @@ body{
     font-weight: 300;
 }
 
+
+
+.flex-c{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-sb{
+    display:flex;
+    justify-content: space-between;
+}
+.fw-w{
+    flex-wrap: wrap;
+}
+
 .wrap{
     max-width: 1920px;
     margin: 0 auto;
 }
 
-.mb-1em{
-    margin-bottom: 16px;
+h1{
+    font-size: 80px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 94px;
+    color: #fff;
 }
-
-.mb-2em{
-    margin-bottom: 32px;
-}
-
-.mb-3em{
-    margin-bottom: 48px;
-}
-
-
 
 /* 原子 */
 //標題
@@ -80,27 +87,12 @@ body{
 
 /* 組織 */
 header{
-    position: relative;
     height: 960px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    .header__bg{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: -1;
-        max-width: 1920px;
-    }
+    background-image: url(../img/bg-header.png);
+    background-size: cover;
+    background-position: center center;
     .header__container{
         h1{
-            margin-bottom: 32px;
-            font-size: 80px;
-            font-weight: bold;
-            font-style: italic;
-            line-height: 94px;
-            color: #fff;
             span{
                 display: block;
                 font-size: 24px;
@@ -108,12 +100,7 @@ header{
                 line-height: 48px;
             }
         }
-        .describeWhite{
-            margin-bottom: 64px;
-        }
         .mediaList{
-            display: flex;
-            justify-content: center;
             li{
                 width: 60px;
                 height: 60px;
@@ -130,32 +117,15 @@ header{
 }
 
 .about{
-    margin-bottom: 56px;
     text-align: center;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    .title{
-        margin-bottom: 40px;
-    }
-    img{
-        margin-bottom: 24px;
-    }
     .about__human{
         padding-bottom: 32px;
-        margin-bottom: 34px;
         border-bottom: 1px solid #000000;
-        .describe{
-            margin-bottom: 8px;
-            &:last-child{
-                margin-bottom: 0;
-            }
-        }
     }
     .about__list{
         li{
             @include _describe;
-            margin-bottom: 32px;
             &::before{
                 content: '';
                 display: inline-block;
@@ -165,7 +135,6 @@ header{
                 margin-right: 16px;
                 border-radius: 50%;
                 background-color: $sec-color;
-
             }
         }
     }
@@ -173,10 +142,8 @@ header{
 
 .brand{
     background-color: #000;
-    margin-bottom: 72px;
     padding-top: 64px;
     padding-bottom: 160px;
-
     .describeWhite{
         font-weight: normal;
         &:nth-child(3){
@@ -184,13 +151,9 @@ header{
         }
     }
     .brand__list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         li:first-child{
             width: 100%;
             text-align: center;
-            margin-bottom: 40px;
         }
         li:nth-child(2){
             margin-right: 24px;
@@ -201,13 +164,14 @@ header{
 .work{
     position: relative;
     padding-bottom: 160px;
+    background-image: url(../img/bg-work.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
     .work__bg{
         position: absolute;
         bottom: 0;
         z-index: -1;
-    }
-    .title{
-        margin-bottom: 24px;
     }
     .describe{
         font-weight: normal;
@@ -216,9 +180,6 @@ header{
     .work__list{
         width: 1200px;
         margin: 0px auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         li{
             margin-bottom: 58px;
             &:nth-child(6), &:nth-child(7), &:nth-child(8){

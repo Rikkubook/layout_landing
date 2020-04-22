@@ -79,6 +79,51 @@ button:focus, button:active, a:focus, a:active {
   outline: none !important;
 }
 
+/*迴圈*/
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-56 {
+  margin-bottom: 56px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.mb-72 {
+  margin-bottom: 72px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
 /* 變數 */
 /* 共用設定 */
 * {
@@ -86,21 +131,43 @@ button:focus, button:active, a:focus, a:active {
   font-weight: 300;
 }
 
+.flex-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-sb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fw-w {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .wrap {
   max-width: 1920px;
   margin: 0 auto;
 }
 
-.mb-1em {
-  margin-bottom: 16px;
-}
-
-.mb-2em {
-  margin-bottom: 32px;
-}
-
-.mb-3em {
-  margin-bottom: 48px;
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 94px;
+  color: #fff;
 }
 
 /* 原子 */
@@ -140,36 +207,10 @@ button:focus, button:active, a:focus, a:active {
 
 /* 組織 */
 header {
-  position: relative;
   height: 960px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-}
-
-header .header__bg {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  z-index: -1;
-  max-width: 1920px;
-}
-
-header .header__container h1 {
-  margin-bottom: 32px;
-  font-size: 80px;
-  font-weight: bold;
-  font-style: italic;
-  line-height: 94px;
-  color: #fff;
+  background-image: url(../img/bg-header.png);
+  background-size: cover;
+  background-position: center center;
 }
 
 header .header__container h1 span {
@@ -177,19 +218,6 @@ header .header__container h1 span {
   font-size: 24px;
   height: 28px;
   line-height: 48px;
-}
-
-header .header__container .describeWhite {
-  margin-bottom: 64px;
-}
-
-header .header__container .mediaList {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 header .header__container .mediaList li {
@@ -207,40 +235,16 @@ header .header__container .mediaList li:last-child {
 }
 
 .about {
-  margin-bottom: 56px;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.about .title {
-  margin-bottom: 40px;
-}
-
-.about img {
-  margin-bottom: 24px;
 }
 
 .about .about__human {
   padding-bottom: 32px;
-  margin-bottom: 34px;
   border-bottom: 1px solid #000000;
-}
-
-.about .about__human .describe {
-  margin-bottom: 8px;
-}
-
-.about .about__human .describe:last-child {
-  margin-bottom: 0;
 }
 
 .about .about__list li {
@@ -249,7 +253,6 @@ header .header__container .mediaList li:last-child {
   font-weight: bold;
   font-style: italic;
   text-align: center;
-  margin-bottom: 32px;
 }
 
 .about .about__list li::before {
@@ -265,7 +268,6 @@ header .header__container .mediaList li:last-child {
 
 .brand {
   background-color: #000;
-  margin-bottom: 72px;
   padding-top: 64px;
   padding-bottom: 160px;
 }
@@ -278,21 +280,9 @@ header .header__container .mediaList li:last-child {
   font-size: 20px;
 }
 
-.brand .brand__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .brand .brand__list li:first-child {
   width: 100%;
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .brand .brand__list li:nth-child(2) {
@@ -302,16 +292,16 @@ header .header__container .mediaList li:last-child {
 .work {
   position: relative;
   padding-bottom: 160px;
+  background-image: url(../img/bg-work.png);
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 
 .work .work__bg {
   position: absolute;
   bottom: 0;
   z-index: -1;
-}
-
-.work .title {
-  margin-bottom: 24px;
 }
 
 .work .describe {
@@ -322,14 +312,6 @@ header .header__container .mediaList li:last-child {
 .work .work__list {
   width: 1200px;
   margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .work .work__list li {
