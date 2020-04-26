@@ -126,9 +126,10 @@ button:focus, button:active, a:focus, a:active {
 
 /* 變數 */
 /* 共用設定 */
-* {
+body {
   font-family: 'Roboto', Microsoft JhengHei, sans-serif;
-  font-weight: 300;
+  font-size: 24px;
+  line-height: 42px;
 }
 
 .flex-c {
@@ -158,7 +159,6 @@ button:focus, button:active, a:focus, a:active {
 }
 
 .wrap {
-  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -189,16 +189,12 @@ h1 {
 }
 
 .describe {
-  font-size: 24px;
-  line-height: 42px;
   font-weight: bold;
   font-style: italic;
   text-align: center;
 }
 
 .describeWhite {
-  font-size: 24px;
-  line-height: 42px;
   font-weight: bold;
   font-style: italic;
   text-align: center;
@@ -206,31 +202,31 @@ h1 {
 }
 
 /* 組織 */
-header {
+.header {
   height: 960px;
   background-image: url(../img/bg-header.png);
   background-size: cover;
   background-position: center center;
 }
 
-header .header__container h1 span {
+.header .header__container h1 span {
   display: block;
   font-size: 24px;
   height: 28px;
   line-height: 48px;
 }
 
-header .header__container .mediaList li {
+.header .header__container .mediaList li {
   width: 60px;
   height: 60px;
   margin-right: 16px;
 }
 
-header .header__container .mediaList li a {
+.header .header__container .mediaList li a {
   display: block;
 }
 
-header .header__container .mediaList li:last-child {
+.header .header__container .mediaList li:last-child {
   margin-right: 0;
 }
 
@@ -248,8 +244,6 @@ header .header__container .mediaList li:last-child {
 }
 
 .about .about__list li {
-  font-size: 24px;
-  line-height: 42px;
   font-weight: bold;
   font-style: italic;
   text-align: center;
@@ -291,9 +285,10 @@ header .header__container .mediaList li:last-child {
 
 .work {
   position: relative;
+  padding-top: 72px;
   padding-bottom: 160px;
   background-image: url(../img/bg-work.png);
-  background-size: contain;
+  background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
 }
@@ -328,13 +323,13 @@ header .header__container .mediaList li:last-child {
   font-weight: normal;
 }
 
-footer {
+.footer {
   padding-top: 64px;
   padding-bottom: 80px;
   background-color: #000;
 }
 
-footer .describeWhite {
+.footer .describeWhite {
   font-weight: normal;
   line-height: 36px;
 }
